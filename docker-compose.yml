@@ -1,0 +1,19 @@
+version:     '2'
+
+services:
+  angular:
+    build:   ngx-agile-board
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./ngx-agile-board:/app
+
+  express:
+    build:   express-server
+    ports:
+      - "3000:3000"
+
+  database:
+    image:   mongo
+    ports:
+      - "27017:27017"
